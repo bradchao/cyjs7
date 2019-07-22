@@ -1,54 +1,31 @@
 <script>
 </script>
 <table border="1" width="100%">
-    <tr>
-        <script>
-            for (let j=2; j<=5; j++){
-                document.write("<td>");
+    <script>
+        const ROW = 4;
+        const START = 1;
+        const COL = 3;
+
+        for (let k=0; k<ROW ; k++){
+            document.write("<tr>");
+            for (let j=START; j< (START+COL); j++){
+                let newj = j + k * COL;
+
+                let isPink;
+                if (COL % 2 == 0){
+                    isPink = (newj + k) % 2 == 0;
+                }else{
+                    isPink = newj % 2 == 0;
+                }
+
+                document.write("<td bgcolor='" + (isPink?"pink":"yellow") + "'>");
                 for (let i = 1; i<=9; i++){
-                    let r = j * i;
-                    document.write(`${j} x ${i} = ${r}<br>`);
+                    let r = newj * i;
+                    document.write(`${newj} x ${i} = ${r}<br>`);
                 }
                 document.write("</td>");
             }
-        </script>
-
-    </tr>
-
-    <tr>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-        <td>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-            2 x 1 = 2<br>
-        </td>
-    </tr>
-    
+            document.write("</tr>");
+        }
+    </script>
 </table>
