@@ -1,10 +1,15 @@
 <script src="bradutils.js"></script>
 <script>
-    let id = 'A123456789';
-    if (checkTWID(id)){
-        document.write("OK");
-    }else{
-        document.write("XX");
+    function checkID(){
+        let mesg = document.getElementById('mesg');
+        let id = document.getElementById('id').value;
+        mesg.innerHTML = checkTWID(id)?'':'ID ERROR!';
     }
-    
 </script>
+<form>
+    Name: <input type="text" /><br>
+    ID: <input id='id' type="text" onblur="checkID()" />
+    <span id="mesg"></span><br>
+    Gender: <input type="radio" name="gender" checked/>Male
+    <input type="radio" name="gender" />Female
+</form>

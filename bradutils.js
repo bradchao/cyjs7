@@ -4,7 +4,9 @@ function sayYaV5(welcome, ...names){
         document.write(`${welcome}! ${name}<br>`);
     }
 }
-
+function fxy(x, y){
+    return 2*x + y;
+}
 function checkTWID(id){
     let ret = false;
     let regex = /^[A-Z][12][0-9]{8}$/;
@@ -28,4 +30,17 @@ function checkTWID(id){
         ret = sum % 10 == 0;
     }
     return ret;
+}
+
+function creaetTWID(){
+
+}
+function createTWIDByArea(area){
+
+}
+function createTWIDByGender(gender){
+
+}
+function createTWIDByAll(area, gender){
+    
 }
