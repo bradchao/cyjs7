@@ -1,0 +1,20 @@
+<script>
+let a = [1,2,'III',3,4,'Brad',5, 'CY',6];
+
+a[10] = 'OK';
+
+for (let i = 0; i<a.length; i++){
+    document.write(a[i] + " ");
+}
+document.write("<hr>");
+for (let i in a ){
+    document.write(a[i] + " ");
+}
+document.write("<hr>");
+for (let value of a ){
+    document.write(value + " ");
+}
+
+
+
+</script>

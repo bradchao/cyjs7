@@ -1,0 +1,28 @@
+<script>
+let poker = [];
+for (let i=0; i<52; i++) poker[i] = i;
+for (let i = poker.length-1; i>0; i--){
+    let rand = parseInt(Math.random()*(i+1));
+    [poker[i], poker[rand]] = [poker[rand], poker[i]];
+}
+
+let players = [[],[],[],[]];
+for (let i=0; i<poker.length; i++){
+    players[i%4].push(poker[i]);
+}
+</script>
+<table border="1" style="border-collapse: collapse" width="100%">
+    
+    <script>
+        for( let j in players ){
+            document.write("<tr>");
+            for (let i in players[0]){
+                document.write("<td>");
+                document.write(players[0][i]);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+    </script>
+    
+</table>
