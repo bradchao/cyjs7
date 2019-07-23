@@ -1,0 +1,32 @@
+<script>
+    let a = [];
+    let b = [1,2,3,4];
+    let c = new Array();
+    let d = new Array(7);   // no 
+    let e = new Array(1,2,3,4);
+    document.write(a.length + "<br>");
+    a.push(1); a.push(12); a.push(123);
+    document.write(a.length + "<br>");
+    for (let i = 0; i < a.length; i++){
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>");
+    a[7] = 2000;
+    document.write(a.length + "<hr>");
+    for (let i = 0; i < a.length; i++){
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>");
+    for (let i in a){
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>");
+    document.write(a.toString());
+    document.write("<hr>");
+    document.write(a.pop() + "<hr>");
+    for (let i in a){
+        document.write(a[i] + "<br>");
+    }
+
+
+</script>
