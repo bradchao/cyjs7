@@ -1,0 +1,48 @@
+<script>
+function sayYa(){
+    document.write("Ya!" + "<br>");
+}
+function sayYaV2(name = 'CY'){
+    document.write(`Ya! ${name}<br>`);
+}
+function sayYaV4(names){
+    if (names instanceof Array){
+        for (let name of names){
+            document.write(`Ya! ${name}<br>`);
+        }
+    }
+}
+function sayYaV5(welcome, ...names){
+    //document.write(typeof names + Array.isArray(names) + "<br>");
+    for (let name of names){
+        document.write(`${welcome}! ${name}<br>`);
+    }
+}
+
+sayYa();
+sayYaV2('Brad');
+sayYaV2();
+sayYaV4(['Brad','Andy','Peter','Tony','Eric']);
+document.write("<hr>");
+sayYaV5('Ya');
+document.write("<hr>");
+sayYaV5('Ya', 'Brad');
+document.write("<hr>");
+sayYaV5('Hello', 'Brad','CY','Eric','Nancy');
+document.write("<hr>");
+
+let fxy = function(x, y){
+    return 2*x + y;
+};
+
+document.write(fxy(10,3) + "<br>");
+
+let newfxy = fxy;
+document.write(newfxy(3,4) + "<br>");
+
+
+
+
+
+
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function sum(){
+        let n = parseInt(document.getElementById("n").value);
+        let i = 1, sum = 0;
+        while (i<=n){
+             sum += i++;
+        }
+        document.getElementById('result').innerHTML = sum;
+    }
+</script>
+
+1 + 2 + ... +
+<input id="n" type="number">
+<input type="button" value="=" onclick="sum()">
+<span id="result"></span>
