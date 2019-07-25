@@ -1,0 +1,26 @@
+<h1 id='head'></h1>
+<hr>
+<canvas id='canvas' width='480' height='320'
+style="border: 1px solid black" ></canvas>
+<script>
+    head.innerHTML = 'CY Big Company';
+    let ctx = canvas.getContext('2d');    // 渲染
+
+    ctx.strokeStyle = 'rgb(0,0,255)';
+    ctx.beginPath();
+    ctx.moveTo(10,10);
+    ctx.lineTo(100,100);
+    ctx.stroke();
+
+    canvas.onmousedown = function(){
+        console.log("down");
+    }
+    canvas.onmouseup = function(){
+        console.log("up");
+    }
+    canvas.onmousemove = function(){
+        console.log("move");
+    }
+
+
+</script>
