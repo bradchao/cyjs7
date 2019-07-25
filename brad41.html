@@ -1,26 +1,56 @@
 <h1 id='head'></h1>
 <hr>
+<input type="button" value="Clear" onclick="clearCanvas()"/>
+<input type="button" value=" <- " onclick="moveLeft()" />
+<input type="button" value=" -> " onclick="moveRight()" />
+<hr>
 <canvas id='canvas' width='480' height='320'
 style="border: 1px solid black" ></canvas>
 <script>
     head.innerHTML = 'CY Big Company';
     let ctx = canvas.getContext('2d');    // 渲染
+    let isDrag = false;
 
     ctx.strokeStyle = 'rgb(0,0,255)';
-    ctx.beginPath();
-    ctx.moveTo(10,10);
-    ctx.lineTo(100,100);
-    ctx.stroke();
+    
 
-    canvas.onmousedown = function(){
-        console.log("down");
+    canvas.onmousedown = function(e){
+        isDrag = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
     }
     canvas.onmouseup = function(){
-        console.log("up");
+        isDrag = false
     }
-    canvas.onmousemove = function(){
-        console.log("move");
+    canvas.onmousemove = function(e){
+        if (!isDrag) return;
+        ctx.lineTo(e.offsetX,e.offsetY);
+        ctx.stroke();
+
     }
 
+    let ball = new Image();
+    let ballX = 200;
+    ball.src = 'ball.png';
+    ball.onload = function(){
+        ctx.drawImage(ball, ballX,100);
+    }
+
+    function moveLeft(){
+        ballX -= 8;
+        clearCanvas();
+        ctx.drawImage(ball, ballX,100);
+    }
+
+    function moveRight(){
+        ballX += 8;
+        clearCanvas();
+        ctx.drawImage(ball, ballX,100);
+    }
+
+
+    function clearCanvas(){
+        ctx.clearRect(0, 0 , 480, 320);
+    }
 
 </script>
