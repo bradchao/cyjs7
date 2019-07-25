@@ -20,7 +20,7 @@
         if (result == `${d}A0B`){
             alert('恭喜老爺, 賀喜夫人');
             replay();
-        }else if(times == 3){
+        }else if(times == 10){
             alert(`Loser: ${answer}`);
             replay();
         }
@@ -42,5 +42,10 @@
 <input type="number" id='input'/>
 <input type="button" value="Guess" onclick="doGuess()"/>
 <input type="button" value="replay" onclick="replay()" />
+<select>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
 <hr>
 <div id="log"></div>
