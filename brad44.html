@@ -32,6 +32,10 @@ style="border: 1px solid black" ></canvas>
         let ball = clone(ballObj);
         ball.x = event.offsetX - 24;
         ball.y = event.offsetY - 24;
+
+        ball.dx = parseInt(Math.random()*17 - 8);
+        ball.dy = parseInt(Math.random()*17 - 8);
+
         ball.img = parseInt(Math.random()*ballImg.length);
         balls.push(ball);
     }
@@ -47,7 +51,22 @@ style="border: 1px solid black" ></canvas>
     }
     setInterval(refreshView, 17);
 
+    function moveBall(obj){
+        if (obj.x <0 || obj.x + 48 > canvas.width){
+            obj.dx *= -1;
+        }
+        if (obj.y <0 || obj.y + 48> canvas.height){
+            obj.dy *= -1;
+        }
+        obj.x += obj.dx; obj.y += obj.dy;
+    }
 
+    function go(){
+        for (let ball of balls){
+            moveBall(ball);
+        }
+    }
+    setInterval(go, 30);
 
 
 </script>
