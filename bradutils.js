@@ -96,3 +96,8 @@ Date.prototype.getCWeek = function(){
     return ws[w];
 }
 
+class Brad {
+    static m1(){
+        
+    }
+}
