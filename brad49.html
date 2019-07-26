@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script src="bradutils.js"></script>
+<script>
+setInterval(() => {
+    let clock = new Date();
+    let clockString = clock.getTWYear() + "-" +
+        (clock.getMonth()+1) + "-" +
+        clock.getDate() + " " +
+        clock.getCWeek();
+    now.innerHTML = clockString;
+
+}, 1*1000);
+
+</script>
+目前日期時間: <span id='now'></span>
