@@ -2,11 +2,18 @@
 let bike = function(name, speed){
     this.name = name;
     this.speed = speed;
+    /*
+    this.chSpeed = function(speed){
+        document.write("debug4 here");
+    }
+    */
 }
+
 bike.chSpeed = function(speed){
     document.write("debug3 here");
     this.speed = speed;
 }
+
 
 bike.prototype.chSpeed = function(speed){
     document.write("debug here");
